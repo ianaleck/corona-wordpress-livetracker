@@ -77,6 +77,7 @@ function ia_covid19_page(){
     $tag = '[ia_covid19';
     $tag .= ' type='.$_POST['ianaleckcorona_type'];
     $tag .= ' loop='.$_POST['ianaleckcorona_loop'];
+    $tag .= ' theme='.$_POST['ianaleckcorona_theme'];
     if (($_POST['ianaleckcorona_type'])=="table") {
       $tag .= ' area='.$_POST['ianaleckcorona_area'];
       $tag .= ' title='.$_POST['ianaleckcorona_title'];
