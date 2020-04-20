@@ -75,13 +75,13 @@ function ia_covid19_page(){
   $notice = "";
   if (array_key_exists("ianaleckcorona_area",$_POST)) {
     $tag = '[ia_covid19';
-    $tag .= ' type='.$_POST['ianaleckcorona_type'];
-    $tag .= ' loop='.$_POST['ianaleckcorona_loop'];
-    $tag .= ' theme='.$_POST['ianaleckcorona_theme'];
+    $tag .= ' type="'.$_POST['ianaleckcorona_type'].'"';
+    $tag .= ' loop="'.$_POST['ianaleckcorona_loop'].'"';
+    $tag .= ' theme="'.$_POST['ianaleckcorona_theme'].'"';
     
     if (($_POST['ianaleckcorona_type'])=="table") {
-      $tag .= ' area='.$_POST['ianaleckcorona_area'];
-      $tag .= ' title='.$_POST['ianaleckcorona_title'];
+      $tag .= ' area="'.$_POST['ianaleckcorona_area'].'"';
+      $tag .= ' title="'.$_POST['ianaleckcorona_title'].'"';
     }
     $tag .= ']';
     $notice = '<h4>Copy the shortcode below to where you want the widget to be dsiplayed.</h4><h3>'.$tag.'</h3>'
@@ -361,7 +361,7 @@ function ia_covid19_page(){
           <label for="">Select Theme</label>
           <select required name="ianaleckcorona_theme">
              <option value="light">Light</option>
-             <option value="light">Dark</option>
+             <option value="dark">Dark</option>
           </select>
         </fieldset>
         <fieldset>
