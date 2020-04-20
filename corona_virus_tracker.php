@@ -1,7 +1,7 @@
 <?php 
 /**
 *Plugin Name: Covid-19 Live Tracker
-* Plugin URI: https://github.com/ianaleck/corona-jquery-livetracker
+* Plugin URI: https://github.com/ianaleck/corona-wordpress-livetracker
 *Author: Ian Aleck
 * Author URI: https://github.com/ianaleck
 *Version: 1.0.0
