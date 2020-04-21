@@ -15,7 +15,8 @@ Corona Virus / Covid-19 Live Tracker plugin to get Live data for table and or ma
 
 == Description ==
 
-Corona Virus / Covid-19 Live Tracker plugin to get Live data for table and or map
+Corona Virus / Covid-19 Live Tracker plugin to get Live data for table and or map.
+The plugin dependent on data from [Novel COVID API](https://corona.lmao.ninja/) as a 3rd party service to provide Live covid-19 statistics and the plugin calls this service as soon as tag is submitted on to the site. A link to there documentation is here [Novel COVID API Documentation](https://corona.lmao.ninja/docs/) https://corona.lmao.ninja/docs/. Novel Covid Api's  [License](https://github.com/NovelCOVID/API/blob/master/LICENSE) is found on https://github.com/NovelCOVID/API/blob/master/LICENSE. 
 
 = Features =
 * **List All Countries Statistics in Summary**
