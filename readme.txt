@@ -15,6 +15,7 @@ Corona Virus / Covid-19 Live Tracker plugin to get Live data for table and or ma
 
 == Description ==
 
+
 Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
 The plugin displays the Coronavirus ( Covid19 ) data of the whole world and country you call through a shortcode [ia_covid19] in your WordPress post or page. You can use the shortcode with some attributes also. For example: [ia_covid19 type=table area=us theme=light].
 
