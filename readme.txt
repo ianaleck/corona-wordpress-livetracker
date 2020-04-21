@@ -1,4 +1,4 @@
-=== Simple Custom CSS and JS ===
+=== Covid-19 Live Tracker ===
 Created: 04/20/2020
 Contributors: ianaleck
 Email: ianaleckm@gmail.com
