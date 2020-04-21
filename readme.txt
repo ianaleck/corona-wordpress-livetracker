@@ -15,8 +15,13 @@ Corona Virus / Covid-19 Live Tracker plugin to get Live data for table and or ma
 
 == Description ==
 
-Corona Virus / Covid-19 Live Tracker plugin to get Live data for table and or map.
-The plugin dependent on data from [Novel COVID API](https://corona.lmao.ninja/) as a 3rd party service to provide Live covid-19 statistics and the plugin calls this service as soon as tag is submitted on to the site. A link to there documentation is here [Novel COVID API Documentation](https://corona.lmao.ninja/docs/) https://corona.lmao.ninja/docs/. Novel Covid Api's  [License](https://github.com/NovelCOVID/API/blob/master/LICENSE) is found on https://github.com/NovelCOVID/API/blob/master/LICENSE. 
+Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+The plugin displays the Coronavirus ( Covid19 ) data of the whole world and country you call through a shortcode [ia_covid19] in your WordPress post or page. You can use the shortcode with some attributes also. For example: [ia_covid19 type=table area=us theme=light].
+
+The plugin dependent on data from a 3rd party service [Novel COVID API](https://corona.lmao.ninja/) to provide Live covid-19 statistics via an API and the plugin calls this service as soon the shortcode [ia_covid19] is available on a page or post. 
+[Novel COVID API Documentation](https://corona.lmao.ninja/docs/) https://corona.lmao.ninja/docs/.
+Novel Covid Api's  [License](https://github.com/NovelCOVID/API/blob/master/LICENSE) is found on https://github.com/NovelCOVID/API/blob/master/LICENSE. 
+Novel Covid [Privacy Policy](https://github.com/NovelCOVID/API/blob/master/privacy.md) https://github.com/NovelCOVID/API/blob/master/privacy.md
 
 = Features =
 * **List All Countries Statistics in Summary**
