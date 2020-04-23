@@ -3,7 +3,7 @@ Created: 04/20/2020
 Contributors: ianaleck
 Email: ianaleckm@gmail.com
 Donate link: https://www.buymeacoffee.com/ianaleck
-Tags: Covid-19, Coronavirus, Corona-virus, Tracker, Statistics
+Tags: Covid-19, Coronavirus, Corona-virus, Live Tracker, Statistics, Coronavirus Live Map
 Requires at least: 3.0.1
 Tested up to: 5.4 
 Stable tag: 3.30
@@ -81,13 +81,18 @@ Yes.
 
 == Screenshots ==
 
-1. Generate Widget/Shortcode
+1. Live Dark Mode Table
+2. Live Map
+3. Mobile Responsive and Select custom countries
+4. Generate Widget/Shortcode
+5. Live Light Mode Table with transparent background
+6. Generate Widget/Shortcode
 
 
 == Changelog ==
 
-= 1.0 =
-* 06/12/2015
+= 1.0.0 =
+* 04/23/2020
 * Initial commit
 
 == Upgrade Notice ==
