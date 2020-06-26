@@ -4,15 +4,18 @@
 * Plugin URI: https://github.com/ianaleck/corona-wordpress-livetracker
 *Author: Ian Aleck
 * Author URI: https://github.com/ianaleck
-*Version: 1.0.0
+*Version: 1.0.1
 *Description: Corona Virus / Covid-19 Live Tracker plugin to get Live data for table and or map
 **/
+if (!defined('ABSPATH')) {
+  exit;
+}
+
 function ianaleckcorona_function($atts){
-  
-  
   extract(shortcode_atts(array(
     'theme' => 'light',
     'area' => 'summary',
+    'usstate' => '',
     'loop'  => 5,
     'type' => 'table',
     'title' => 'World Statistics'
@@ -21,7 +24,8 @@ function ianaleckcorona_function($atts){
   $object = (object)[
     'theme' => $theme,
     'area' => $area,
-    'loop'  => $area,
+    'usstate' => $usstate,
+    'loop'  => $loop,
     'type' => $type,
     'title' => $title,
     'id' => $id
@@ -35,6 +39,7 @@ function ianaleckcorona_function($atts){
     jQuery(function($) {
       $("#<?= esc_attr($object->id) ?>").coronaTracker({
         area:"<?= esc_attr($object->area) ?>",
+        usstate:"<?= esc_attr($object->usstate) ?>",
         theme:"<?= esc_attr($object->theme) ?>",
         loop:<?= esc_attr((int)$object->loop) ?>,
         type:"<?= esc_attr($object->type) ?>",
@@ -46,7 +51,8 @@ function ianaleckcorona_function($atts){
     <?php
   }, 1, 5);
   return '<div id="'.esc_attr($id).'"></div>';
-}add_shortcode('ia_covid19','ianaleckcorona_function');
+}
+add_shortcode('ia_covid19','ianaleckcorona_function');
 
 function ia_covid19_admin_menu_option(){
   add_menu_page('Covid-19 Live Tracker', 'Covid-19 Tracker', 'manage_options','ia_covid19_tracker','ia_covid19_page','',200);
@@ -84,6 +90,7 @@ function ia_covid19_page(){
     $loop = sanitize_text_field($_POST['ianaleckcorona_loop']);
     $theme = sanitize_text_field($_POST['ianaleckcorona_theme']);
     $area = sanitize_text_field($_POST['ianaleckcorona_area']);
+    $usstate = sanitize_text_field($_POST['ianaleckcorona_usstate']);
     $title = sanitize_text_field($_POST['ianaleckcorona_title']);
     //Lets Validate
     //Types
@@ -373,6 +380,7 @@ function ia_covid19_page(){
     
     if (($type)=="table") {
       $tag .= ' area="'.$area.'"';
+      $tag .= ' usstate="'.$usstate.'"';
       $tag .= ' title="'.$title.'"';
     }
     $tag .= ']';
@@ -664,6 +672,69 @@ function ia_covid19_page(){
   <option value="YE">Yemen</option>
   <option value="ZM">Zambia</option>
   <option value="ZW">Zimbabwe</option>
+  </select>
+  </fieldset>
+  <fieldset>
+  <label for="">If US State</label>
+  <select name="ianaleckcorona_usstate">
+  <option value=""></option>
+  <option value="alabama">Alabama</option>
+<option value="alaska">Alaska</option>
+<option value="american samoa">American Samoa</option>
+<option value="arizona">Arizona</option>
+<option value="arkansas">Arkansas</option>
+<option value="california">California</option>
+<option value="colorado">Colorado</option>
+<option value="connecticut">Connecticut</option>
+<option value="delaware">Delaware</option>
+<option value="dc">DC</option>
+<option value="florida">Florida</option>
+<option value="georgia">Georgia</option>
+<option value="guam">Guam</option>
+<option value="hawaii">Hawaii</option>
+<option value="idaho">Idaho</option>
+<option value="illinois">Illinois</option>
+<option value="indiana">Indiana</option>
+<option value="iowa">Iowa</option>
+<option value="kansas">Kansas</option>
+<option value="kentucky">Kentucky</option>
+<option value="louisiana">Louisiana</option>
+<option value="maine">Maine</option>
+<option value="maryland">Maryland</option>
+<option value="massachusetts">Massachusetts</option>
+<option value="michigan">Michigan</option>
+<option value="minnesota">Minnesota</option>
+<option value="minor outlying islands">Minor Outlying Islands</option>
+<option value="mississippi">Mississippi</option>
+<option value="missouri">Missouri</option>
+<option value="montana">Montana</option>
+<option value="nebraska">Nebraska</option>
+<option value="nevada">Nevada</option>
+<option value="new hampshire">New Hampshire</option>
+<option value="new jersey">New Jersey</option>
+<option value="new mexico">New Mexico</option>
+<option value="new york">New York</option>
+<option value="north carolina">North Carolina</option>
+<option value="north dakota">North Dakota</option>
+<option value="northern mariana islands">Northern Mariana Islands</option>
+<option value="ohio">Ohio</option>
+<option value="oklahoma">Oklahoma</option>
+<option value="oregon">Oregon</option>
+<option value="pennsylvania">Pennsylvania</option>
+<option value="puerto rico">Puerto Rico</option>
+<option value="rhode island">Rhode Island</option>
+<option value="south carolina">South Carolina</option>
+<option value="south dakota">South Dakota</option>
+<option value="tennessee">Tennessee</option>
+<option value="texas">Texas</option>
+<option value="u.s. virgin islands">U.S. Virgin Islands</option>
+<option value="utah">Utah</option>
+<option value="vermont">Vermont</option>
+<option value="virginia">Virginia</option>
+<option value="washington">Washington</option>
+<option value="west virginia">West Virginia</option>
+<option value="wisconsin">Wisconsin</option>
+<option value="wyoming">Wyoming</option>
   </select>
   </fieldset>
   <fieldset>

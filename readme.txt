@@ -95,6 +95,11 @@ Yes.
 * 04/23/2020
 * Initial commit
 
+= 1.0.1 =
+* 00/26/2020
+* Support US States for table
+
+
 == Upgrade Notice ==
 
 Nothing at the moment

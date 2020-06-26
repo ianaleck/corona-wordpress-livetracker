@@ -18,7 +18,8 @@ jQuery(function($) {
       loop:5,
       title:"World Statistics",
       theme:"light",
-      type:"table"
+      type:"table",
+      usstate:"",
     };
     var settings = $.extend({}, defaults, options);
     
@@ -55,14 +56,16 @@ jQuery(function($) {
     function getInfo(){
       loops = [];
       var url = base_uri;
-      if (settings.area.toLowerCase()=="summary") {
+      if (settings.usstate.toLowerCase()!="") {
+        url += "states/"+settings.usstate.toLowerCase();
+      }else if (settings.area.toLowerCase()=="summary") {
         url += "all";
       }else if(settings.area.toLowerCase()=="all"){
         url += "countries";
       }else if (settings.type.toLowerCase()=="map") {
         url += "countries";
       }else{
-        url += "countries/"+settings.area.toLowerCase()
+        url += "countries/"+settings.area.toLowerCase();
       }
       
       
@@ -123,11 +126,14 @@ jQuery(function($) {
             }
             
             object.deaths = result.deaths.toLocaleString().replace(/,/g, " ");
-            object.recovered = result.recovered.toLocaleString().replace(/,/g, " ");
+            object.recovered = result.recovered ? result.recovered.toLocaleString().replace(/,/g, " ") : "No Data";
             if (result.country!=undefined) {
               object.area = result.country;
               object.flag = result.countryInfo.flag;
               object.country = result.countryInfo;
+            }else if (result.state!=undefined) {
+              object.area = result.state;
+              object.flag = "https://disease.sh/assets/img/flags/us.png"
             }else{
               object.area = "Summary";
               object.flag = "https://www.who.int/images/default-source/default-album/who-emblem-rgb.png?sfvrsn=39f388cd_0";
@@ -139,8 +145,7 @@ jQuery(function($) {
           }else{
             parseHtml();
           }
-          
-          
+        
         },
         error:function(error){
           if (error.responseJSON!=undefined) {
@@ -185,6 +190,11 @@ jQuery(function($) {
       return 'hsl('+c+', 100%, 50%)';
     }
     function parseMap(){
+      
+      if (settings.usstate!="") {
+        myDiv.html('<h3>MAP doesnt support states</h3>'); return;
+      }
+      
       settings.loop = 0;
       var countryValues = {};
       for (var cpos = 0; cpos < loops.length; cpos++) {
